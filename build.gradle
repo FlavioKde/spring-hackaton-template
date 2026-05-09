@@ -20,30 +20,44 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-webmvc'
 
-	//spring data JPA
+	// Spring Data JPA
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-h2console'
 
-
-	//H2 database
+	// H2 database
 	runtimeOnly 'com.h2database:h2'
 
-	//lombok
+	// Spring Security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
+	// JWT
+	implementation 'io.jsonwebtoken:jjwt-api:0.12.6'
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.6'
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.6'
+
+	// Lombok
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 
-	//test
+	// Jackson (JSON)
+	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
+
+	// Spring Boot DevTools
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	// Spring Validation
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+	// WebClient for Google Maps API calls
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+	// Test
 	testImplementation 'org.springframework.boot:spring-boot-starter-data-jpa-test'
 	testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
+	testImplementation 'org.springframework.boot:spring-boot-starter-security-test'
 	testCompileOnly 'org.projectlombok:lombok'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	testAnnotationProcessor 'org.projectlombok:lombok'
-
-	// Spring Boot DevTools (fast recharge in dev)
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-
-    // Spring Validation (validation data)
-	implementation 'org.springframework.boot:spring-boot-starter-validation'
 }
 
 tasks.named('test') {
